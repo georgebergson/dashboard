@@ -11,6 +11,10 @@ import {
   mdiResponsive,
   mdiPalette,
   mdiReact,
+  mdiFinance,
+  mdiOrderBoolAscendingVariant,
+  mdiFilePlus 
+
 } from "@mdi/js";
 
 export default [
@@ -18,6 +22,54 @@ export default [
     to: "/dashboard",
     icon: mdiMonitor,
     label: "Painel",
+  },
+  {
+    label: "Cadastros",
+    icon: mdiSquareEditOutline,
+    menu: [
+      {
+        label: "Item One",
+      },
+      {
+        label: "Item Two",
+      },
+    ],
+  },
+  {
+    label: "Financeiro",
+    icon: mdiFinance,
+    menu: [
+      {
+        label: "Item One",
+      },
+      {
+        label: "Item Two",
+      },
+    ],
+  },
+  {
+    label: "Estoque",
+    icon: mdiOrderBoolAscendingVariant ,
+    menu: [
+      {
+        label: "Item One",
+      },
+      {
+        label: "Item Two",
+      },
+    ],
+  },
+  {
+    label: "Fiscal",
+    icon: mdiFilePlus  ,
+    menu: [
+      {
+        label: "Item One",
+      },
+      {
+        label: "Item Two",
+      },
+    ],
   },
   {
     to: "/tables",

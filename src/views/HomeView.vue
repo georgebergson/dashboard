@@ -46,10 +46,10 @@ const transactionBarItems = computed(() => mainStore.history);
     <SectionMain>
       <SectionTitleLineWithButton
         :icon="mdiChartTimelineVariant"
-        title="Overview"
+        title="Painel Inicial"
         main
       >
-        <BaseButton
+        <!-- <BaseButton
           href="https://github.com/justboil/admin-one-vue-tailwind"
           target="_blank"
           :icon="mdiGithub"
@@ -57,35 +57,35 @@ const transactionBarItems = computed(() => mainStore.history);
           color="contrast"
           rounded-full
           small
-        />
+        /> -->
       </SectionTitleLineWithButton>
 
       <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 mb-6">
         <CardBoxWidget
-          trend="12%"
+          trend="Junho"
           trend-type="up"
           color="text-emerald-500"
           :icon="mdiAccountMultiple"
           :number="512"
-          label="Clients"
+          label="Contas à Receber"
         />
         <CardBoxWidget
-          trend="12%"
+          trend="Junho"
           trend-type="down"
           color="text-blue-500"
           :icon="mdiCartOutline"
           :number="7770"
-          prefix="$"
-          label="Sales"
+          prefix="R$ "
+          label="Contas à Pagar"
         />
         <CardBoxWidget
-          trend="Overflow"
+          trend="Junho"
           trend-type="alert"
           color="text-red-500"
           :icon="mdiChartTimelineVariant"
           :number="256"
           suffix="%"
-          label="Performance"
+          label="Lucros"
         />
       </div>
 
@@ -102,7 +102,7 @@ const transactionBarItems = computed(() => mainStore.history);
             :account="transaction.account"
           />
         </div>
-        <div class="flex flex-col justify-between">
+        <!-- <div class="flex flex-col justify-between">
           <CardBoxClient
             v-for="client in clientBarItems"
             :key="client.id"
@@ -111,7 +111,7 @@ const transactionBarItems = computed(() => mainStore.history);
             :date="client.created"
             :progress="client.progress"
           />
-        </div>
+        </div> -->
       </div>
 
       <SectionBannerStarOnGitHub class="mt-6 mb-6" />
