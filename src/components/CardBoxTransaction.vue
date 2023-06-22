@@ -39,17 +39,17 @@ const props = defineProps({
 });
 
 const icon = computed(() => {
-  if (props.type === "withdrawal") {
+  if (props.type === "Cancelada") {
     return {
       icon: mdiCashMinus,
       type: "danger",
     };
-  } else if (props.type === "deposit") {
+  } else if (props.type === "Positivo") {
     return {
       icon: mdiCashPlus,
       type: "success",
     };
-  } else if (props.type === "invoice") {
+  } else if (props.type === "Contigência") {
     return {
       icon: mdiReceipt,
       type: "warning",
@@ -69,9 +69,9 @@ const icon = computed(() => {
       <BaseLevel type="justify-start">
         <IconRounded :icon="icon.icon" :color="icon.type" class="md:mr-6" />
         <div class="text-center space-y-1 md:text-left md:mr-6">
-          <h4 class="text-xl">${{ amount }}</h4>
+          <h4 class="text-xl">R$ {{ amount }}</h4>
           <p class="text-gray-500 dark:text-slate-400">
-            <b>{{ date }}</b> via {{ business }}
+            <b>{{ date }}</b> {{ business }}
           </p>
         </div>
       </BaseLevel>
