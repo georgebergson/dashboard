@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import { mdiTrendingDown, mdiTrendingUp, mdiTrendingNeutral } from "@mdi/js";
-import BaseLevel from "@/components/BaseLevel.vue";
+import BaseLevelNew from "@/components/BaseLevelNew.vue";
 
 const props = defineProps({
     data:{
@@ -65,9 +65,9 @@ const pillIcon = computed(() => {
 </script>
 
 <template>
-    <BaseLevel>
+    <BaseLevelNew>
        
-        <BaseLevel type="justify-start">
+        <BaseLevelNew type="justify-start">
             <div class="w-8 h-8 mr-6 my-1 bg-gray-100 rounded-full flex justify-center items-center">
                 {{ data }}
             </div>
@@ -76,7 +76,7 @@ const pillIcon = computed(() => {
                     <span>{{ name }}</span>
                 </h5>
             </div>
-        </BaseLevel>
+        </BaseLevelNew>
         whats
-    </BaseLevel>
+    </BaseLevelNew>
 </template>

@@ -22,7 +22,7 @@ import CardBoxTransaction from "@/components/CardBoxTransaction.vue";
 import CardBoxAniversario from "@/components/CardBoxAniversario.vue";
 import LayoutAuthenticated from "@/layouts/LayoutAuthenticated.vue";
 import SectionTitleLineWithButton from "@/components/SectionTitleLineWithButton.vue";
-import SectionBannerStarOnGitHub from "@/components/SectionBannerStarOnGitHub.vue";
+import SectionBannerAulas from "@/components/SectionBannerAulas.vue";
 
 const chartData = ref(null);
 
@@ -44,6 +44,14 @@ const transactionBarItems = computed(() => mainStore.history);
 
 <template>
   <LayoutAuthenticated>
+    <NotificationBar color="info" :icon="mdiMonitorCellphone">
+      <div class="lg:flex space-x-10">
+        <div>
+          <b>Sua mensalidade está vencendo no dia. </b> <span> 23/07/2023</span>
+        </div>
+        <strong><i><a href="#">Clique aqui e efetue o pagamento</a></i></strong>
+      </div>
+    </NotificationBar>
     <SectionMain>
       <SectionTitleLineWithButton
         :icon="mdiChartTimelineVariant"
@@ -114,10 +122,14 @@ const transactionBarItems = computed(() => mainStore.history);
           />
         </div> -->
         <div class="flex flex-col justify-between">
-          <CardBox style="height:450px" class="mb-6 overflow-y-auto last:mb-0" is-hoverable>
+          <CardBox
+            style="height: 450px"
+            class="mb-6 overflow-y-auto last:mb-0"
+            is-hoverable
+          >
             <BaseLevel>
               <h4 class="text-xl text-ellipsis text-center mb-3">
-               ANIVERSÁRIANTE DO MÊS
+                ANIVERSÁRIANTE DO MÊS
               </h4>
               <CardBoxAniversario
                 v-for="client in clientBarItems"
@@ -133,9 +145,9 @@ const transactionBarItems = computed(() => mainStore.history);
         </div>
       </div>
 
-      <SectionBannerStarOnGitHub class="mt-6 mb-6" />
+      <SectionBannerAulas class="mt-6 mb-6" />
 
-      <SectionTitleLineWithButton :icon="mdiChartPie" title="Trends overview">
+      <!-- <SectionTitleLineWithButton :icon="mdiChartPie" title="Trends overview">
         <BaseButton
           :icon="mdiReload"
           color="whiteDark"
@@ -147,13 +159,9 @@ const transactionBarItems = computed(() => mainStore.history);
         <div v-if="chartData">
           <line-chart :data="chartData" class="h-96" />
         </div>
-      </CardBox>
+      </CardBox> -->
 
       <SectionTitleLineWithButton :icon="mdiAccountMultiple" title="Clients" />
-
-      <NotificationBar color="info" :icon="mdiMonitorCellphone">
-        <b>Responsive table.</b> Collapses on mobile
-      </NotificationBar>
 
       <CardBox has-table>
         <TableSampleClients />

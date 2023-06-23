@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, useSlots } from "vue";
-import { mdiClose } from "@mdi/js";
+import { mdiClose,mdiMessageBadge  } from "@mdi/js";
 import { colorsBgLight, colorsOutline } from "@/colors.js";
 import BaseLevel from "@/components/BaseLevel.vue";
 import BaseIcon from "@/components/BaseIcon.vue";
@@ -37,13 +37,13 @@ const hasRightSlot = computed(() => slots.right);
   <div
     v-if="!isDismissed"
     :class="componentClass"
-    class="px-3 py-6 md:py-3 mb-6 last:mb-0 border rounded-lg transition-colors duration-150"
+    class="mx-3 px-3 py-6 md:py-3 mb-0 last:mb-0 border rounded-lg transition-colors duration-150"
   >
     <BaseLevel>
       <div class="flex flex-col md:flex-row items-center">
         <BaseIcon
           v-if="icon"
-          :path="icon"
+          :path="mdiMessageBadge "
           w="w-10 md:w-5"
           h="h-10 md:h-5"
           size="24"
