@@ -161,11 +161,11 @@ const transactionBarItems = computed(() => mainStore.history);
         </div>
       </CardBox> -->
 
-      <SectionTitleLineWithButton :icon="mdiAccountMultiple" title="Clients" />
+      <!-- <SectionTitleLineWithButton :icon="mdiAccountMultiple" title="Clients" />
 
       <CardBox has-table>
         <TableSampleClients />
-      </CardBox>
+      </CardBox> -->
     </SectionMain>
   </LayoutAuthenticated>
 </template>
