@@ -19,7 +19,7 @@ import TableSampleClients from "@/components/TableSampleClients.vue";
 import NotificationBar from "@/components/NotificationBar.vue";
 import BaseButton from "@/components/BaseButton.vue";
 import CardBoxTransaction from "@/components/CardBoxTransaction.vue";
-import CardBoxClient from "@/components/CardBoxClient.vue";
+import CardBoxAniversario from "@/components/CardBoxAniversario.vue";
 import LayoutAuthenticated from "@/layouts/LayoutAuthenticated.vue";
 import SectionTitleLineWithButton from "@/components/SectionTitleLineWithButton.vue";
 import SectionBannerStarOnGitHub from "@/components/SectionBannerStarOnGitHub.vue";
@@ -36,7 +36,8 @@ onMounted(() => {
 
 const mainStore = useMainStore();
 
-const clientBarItems = computed(() => mainStore.clients.slice(0, 4));
+//const clientBarItems = computed(() => mainStore.clients.slice(0, 4));
+const clientBarItems = computed(() => mainStore.clients);
 
 const transactionBarItems = computed(() => mainStore.history);
 </script>
@@ -112,6 +113,24 @@ const transactionBarItems = computed(() => mainStore.history);
             :progress="client.progress"
           />
         </div> -->
+        <div class="flex flex-col justify-between">
+          <CardBox style="height:450px" class="mb-6 overflow-y-auto last:mb-0" is-hoverable>
+            <BaseLevel>
+              <h4 class="text-xl text-ellipsis text-center mb-3">
+               ANIVERSÁRIANTE DO MÊS
+              </h4>
+              <CardBoxAniversario
+                v-for="client in clientBarItems"
+                :key="client.id"
+                :data="client.id"
+                :name="client.name"
+                :login="client.login"
+                :date="client.created"
+                :progress="client.progress"
+              />
+            </BaseLevel>
+          </CardBox>
+        </div>
       </div>
 
       <SectionBannerStarOnGitHub class="mt-6 mb-6" />
