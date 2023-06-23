@@ -22,7 +22,7 @@ import CardBoxTransaction from "@/components/CardBoxTransaction.vue";
 import CardBoxAniversario from "@/components/CardBoxAniversario.vue";
 import LayoutAuthenticated from "@/layouts/LayoutAuthenticated.vue";
 import SectionTitleLineWithButton from "@/components/SectionTitleLineWithButton.vue";
-import SectionBannerStarOnGitHub from "@/components/SectionBannerStarOnGitHub.vue";
+import SectionBannerAulas from "@/components/SectionBannerAulas.vue";
 
 const chartData = ref(null);
 
@@ -133,7 +133,7 @@ const transactionBarItems = computed(() => mainStore.history);
         </div>
       </div>
 
-      <SectionBannerStarOnGitHub class="mt-6 mb-6" />
+      <SectionBannerAulas class="mt-6 mb-6" />
 
       <SectionTitleLineWithButton :icon="mdiChartPie" title="Trends overview">
         <BaseButton
