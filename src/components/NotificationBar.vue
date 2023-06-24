@@ -23,9 +23,13 @@ const componentClass = computed(() =>
 );
 
 const isDismissed = ref(false);
+const notificacao_mensalidade = sessionStorage.getItem('notificacao_mensalidade');
+notificacao_mensalidade != null ? isDismissed.value = true : '';
+
 
 const dismiss = () => {
   isDismissed.value = true;
+  sessionStorage.setItem('notificacao_mensalidade',true);
 };
 
 const slots = useSlots();
